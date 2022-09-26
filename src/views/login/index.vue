@@ -84,6 +84,7 @@ export default {
         this.loading = true
         // 请求接口
         await this.$store.dispatch('user/loginAction', this.loginForm)
+        this.$router.push('/')
       } finally {
         this.loading = false
       }
