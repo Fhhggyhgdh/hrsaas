@@ -10,9 +10,12 @@ import store from '@/store'
 // 2.2.1 判断一下 是否处于白名单 是的话 直接留在 当前页 否则 跳转到登录页
 const whiteList = ['/login', '/404']
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async(to, from, next) => {
   // 判断是否有token
   if (store.getters.token) {
+    if (!store.getters.userId) {
+      await store.dispatch('user/getUserInfo')
+    }
     if (to.path === '/login') {
       next('/')
     } else {
