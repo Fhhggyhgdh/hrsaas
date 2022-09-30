@@ -115,3 +115,19 @@ export function param2Obj(url) {
   })
   return obj
 }
+
+// 封装一个函数，找到第一层数据
+export const tranListToTreeData = (list, rootValue) => {
+  const arr = []
+  list.forEach(ele => {
+    if (ele.pid === rootValue) {
+      const children = tranListToTreeData(list, ele.id)
+      if (children
+        .length) {
+        ele.children = children
+      }
+      arr.push(ele)
+    }
+  })
+  return arr
+}
