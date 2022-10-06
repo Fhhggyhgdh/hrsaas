@@ -52,7 +52,6 @@ service.interceptors.response.use(
     }
   },
   error => {
-    // console.log(error)
     // 当token不完整或者被修改后，退出登录，跳转到登陆页面
     if (error.response && error.response.status === 401) {
       store.dispatch('user/logout')
