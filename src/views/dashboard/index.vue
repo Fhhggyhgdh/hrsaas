@@ -2,6 +2,7 @@
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
     <!-- <svg-icon iconClass="dashboard"></svg-icon> -->
+
   </div>
 </template>
 
@@ -14,6 +15,8 @@ export default {
     ...mapGetters([
       'name'
     ])
+  },
+  methods: {
   }
 }
 </script>
