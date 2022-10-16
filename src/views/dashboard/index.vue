@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
-    <!-- <svg-icon iconClass="dashboard"></svg-icon> -->
+    <!-- <upload-img @on-success="onSuccess" /> -->
 
   </div>
 </template>
@@ -17,6 +17,9 @@ export default {
     ])
   },
   methods: {
+    onSuccess(val) {
+      console.log(val)
+    }
   }
 }
 </script>

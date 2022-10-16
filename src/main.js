@@ -17,6 +17,9 @@ import '@/permission' // permission control
 import * as directives from '@/directives'
 import component from '@/components/index'
 
+import Print from 'vue-print-nb'
+Vue.use(Print)
+
 Vue.use(component)
 
 Object.keys(directives).forEach(ele => {
